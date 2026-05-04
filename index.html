@@ -291,6 +291,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 50%;
   display: block;
 }
+.shape-1 .dr-illustration {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  display: none;
+}
+.doctor-photo .dr-illustration {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  display: none;
+}
+.doctor-photo img {
+  position: relative;
+  z-index: 1;
+}
 .shape-1::after {
   content: '';
   position: absolute;
@@ -1005,7 +1022,65 @@ footer .logo { color: #fff; }
     <div class="shape shape-2"></div>
     <div class="shape shape-4"></div>
     <div class="shape shape-1">
-      <img src="dra-vania.png" alt="Dra. Vânia Gallucci" onerror="this.style.display='none'">
+      <img src="dra-vania.png" alt="Dra. Vânia Gallucci" class="dr-photo dr-photo-hero" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg class="dr-illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-label="Ilustração da Dra. Vânia">
+        <defs>
+          <radialGradient id="bg1" cx="35%" cy="30%" r="80%">
+            <stop offset="0%" stop-color="#F2E2D0"/>
+            <stop offset="60%" stop-color="#E8D4C2"/>
+            <stop offset="100%" stop-color="#C4956A"/>
+          </radialGradient>
+          <linearGradient id="hair1" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#9E7A45"/>
+            <stop offset="60%" stop-color="#C4956A"/>
+            <stop offset="100%" stop-color="#E8C9A8"/>
+          </linearGradient>
+          <linearGradient id="blazer1" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#8E6843"/>
+            <stop offset="100%" stop-color="#5C4530"/>
+          </linearGradient>
+          <linearGradient id="skin1" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#F4D7BC"/>
+            <stop offset="100%" stop-color="#E2B997"/>
+          </linearGradient>
+        </defs>
+        <circle cx="200" cy="200" r="200" fill="url(#bg1)"/>
+        <!-- shoulders / blazer -->
+        <path d="M40 400 C 60 310, 120 280, 145 270 L 255 270 C 280 280, 340 310, 360 400 Z" fill="url(#blazer1)"/>
+        <!-- white shirt collar -->
+        <path d="M165 280 L200 320 L235 280 L228 350 L172 350 Z" fill="#FBFAF7"/>
+        <path d="M170 285 L200 330 L230 285" stroke="#D8D3C9" stroke-width="2" fill="none"/>
+        <!-- neck -->
+        <path d="M178 240 L178 285 Q200 295 222 285 L222 240 Z" fill="url(#skin1)"/>
+        <!-- back hair -->
+        <path d="M120 180 Q108 250 138 295 L150 290 Q132 240 145 195 Z" fill="url(#hair1)"/>
+        <path d="M280 180 Q295 250 268 300 L252 295 Q272 245 258 195 Z" fill="url(#hair1)"/>
+        <!-- face -->
+        <ellipse cx="200" cy="180" rx="62" ry="78" fill="url(#skin1)"/>
+        <!-- top hair -->
+        <path d="M138 168 Q140 100 200 92 Q262 100 264 170 Q260 145 232 138 Q210 130 200 138 Q188 130 168 142 Q145 152 138 168 Z" fill="url(#hair1)"/>
+        <path d="M148 175 Q160 145 200 140 Q240 145 254 175" stroke="#8E6843" stroke-width="1.5" fill="none" opacity="0.5"/>
+        <!-- side hair flowing -->
+        <path d="M138 175 Q120 230 145 285 L158 280 Q140 230 152 180 Z" fill="url(#hair1)"/>
+        <path d="M262 175 Q282 230 258 290 L244 285 Q262 230 250 180 Z" fill="url(#hair1)"/>
+        <!-- eyebrows (looking up slightly) -->
+        <path d="M168 162 Q180 156 192 161" stroke="#5C4530" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M210 161 Q222 156 234 162" stroke="#5C4530" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- eyes (closed/smiling, looking up) -->
+        <path d="M170 178 Q180 173 190 178" stroke="#3A2818" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M212 178 Q222 173 232 178" stroke="#3A2818" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- subtle blush -->
+        <ellipse cx="160" cy="200" rx="14" ry="8" fill="#E8A89A" opacity="0.35"/>
+        <ellipse cx="240" cy="200" rx="14" ry="8" fill="#E8A89A" opacity="0.35"/>
+        <!-- nose -->
+        <path d="M200 188 Q197 208 194 218 Q200 222 206 218 Q203 208 200 188" fill="#D8A684" opacity="0.4"/>
+        <!-- smile -->
+        <path d="M180 228 Q200 248 220 228" stroke="#A23A3A" stroke-width="3" fill="#C24A4A" stroke-linejoin="round"/>
+        <path d="M182 230 Q200 240 218 230 L215 232 Q200 236 185 232 Z" fill="#FBFAF7"/>
+        <!-- earrings hint -->
+        <circle cx="142" cy="200" r="2.5" fill="#C4956A"/>
+        <circle cx="258" cy="200" r="2.5" fill="#C4956A"/>
+      </svg>
     </div>
     <div class="shape shape-3"></div>
     <div class="dr-badge">
@@ -1139,7 +1214,52 @@ footer .logo { color: #fff; }
   <div class="container">
     <div class="doctor-grid">
       <div class="doctor-photo reveal">
-        <img src="dra-vania.png" alt="Dra. Vânia Gallucci — Biomédica Esteta" onerror="this.style.display='none'">
+        <img src="dra-vania.png" alt="Dra. Vânia Gallucci — Biomédica Esteta" class="dr-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <svg class="dr-illustration" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-label="Ilustração da Dra. Vânia">
+          <defs>
+            <radialGradient id="bg2" cx="35%" cy="25%" r="90%">
+              <stop offset="0%" stop-color="#F2E2D0"/>
+              <stop offset="60%" stop-color="#E8D4C2"/>
+              <stop offset="100%" stop-color="#C4956A"/>
+            </radialGradient>
+            <linearGradient id="hair2" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#9E7A45"/>
+              <stop offset="60%" stop-color="#C4956A"/>
+              <stop offset="100%" stop-color="#E8C9A8"/>
+            </linearGradient>
+            <linearGradient id="blazer2" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#8E6843"/>
+              <stop offset="100%" stop-color="#5C4530"/>
+            </linearGradient>
+            <linearGradient id="skin2" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#F4D7BC"/>
+              <stop offset="100%" stop-color="#E2B997"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="500" fill="url(#bg2)"/>
+          <path d="M30 500 C 40 380, 110 340, 145 320 L 255 320 C 290 340, 360 380, 370 500 Z" fill="url(#blazer2)"/>
+          <path d="M165 330 L200 372 L235 330 L228 410 L172 410 Z" fill="#FBFAF7"/>
+          <path d="M170 335 L200 380 L230 335" stroke="#D8D3C9" stroke-width="2" fill="none"/>
+          <path d="M178 290 L178 335 Q200 345 222 335 L222 290 Z" fill="url(#skin2)"/>
+          <path d="M120 230 Q108 300 138 345 L150 340 Q132 290 145 245 Z" fill="url(#hair2)"/>
+          <path d="M280 230 Q295 300 268 350 L252 345 Q272 295 258 245 Z" fill="url(#hair2)"/>
+          <ellipse cx="200" cy="230" rx="62" ry="78" fill="url(#skin2)"/>
+          <path d="M138 218 Q140 150 200 142 Q262 150 264 220 Q260 195 232 188 Q210 180 200 188 Q188 180 168 192 Q145 202 138 218 Z" fill="url(#hair2)"/>
+          <path d="M148 225 Q160 195 200 190 Q240 195 254 225" stroke="#8E6843" stroke-width="1.5" fill="none" opacity="0.5"/>
+          <path d="M138 225 Q120 280 145 335 L158 330 Q140 280 152 230 Z" fill="url(#hair2)"/>
+          <path d="M262 225 Q282 280 258 340 L244 335 Q262 280 250 230 Z" fill="url(#hair2)"/>
+          <path d="M168 212 Q180 206 192 211" stroke="#5C4530" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M210 211 Q222 206 234 212" stroke="#5C4530" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M170 228 Q180 223 190 228" stroke="#3A2818" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M212 228 Q222 223 232 228" stroke="#3A2818" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="160" cy="250" rx="14" ry="8" fill="#E8A89A" opacity="0.35"/>
+          <ellipse cx="240" cy="250" rx="14" ry="8" fill="#E8A89A" opacity="0.35"/>
+          <path d="M200 238 Q197 258 194 268 Q200 272 206 268 Q203 258 200 238" fill="#D8A684" opacity="0.4"/>
+          <path d="M180 278 Q200 298 220 278" stroke="#A23A3A" stroke-width="3" fill="#C24A4A" stroke-linejoin="round"/>
+          <path d="M182 280 Q200 290 218 280 L215 282 Q200 286 185 282 Z" fill="#FBFAF7"/>
+          <circle cx="142" cy="250" r="3" fill="#C4956A"/>
+          <circle cx="258" cy="250" r="3" fill="#C4956A"/>
+        </svg>
       </div>
       <div class="doctor-content reveal">
         <span class="doctor-tag">
