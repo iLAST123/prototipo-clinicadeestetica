@@ -115,7 +115,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 600;
   color: var(--color-dark);
   letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
+.logo img { height: 40px; width: 40px; object-fit: contain; border-radius: 6px; }
 .logo span { color: var(--color-primary); }
 
 .nav-links {
@@ -831,7 +835,7 @@ footer .logo { color: #fff; }
 <!-- ===== Navbar ===== -->
 <nav class="navbar" id="navbar">
   <div class="nav-container">
-    <a href="#hero" class="logo">Beauty Clinic<span> Vasconcellos</span></a>
+    <a href="#hero" class="logo"><img src="clinic-vasconcellos.jpg" alt="Beauty Clinic Vasconcellos logo">Beauty Clinic<span> Vasconcellos</span></a>
     <ul class="nav-links">
       <li><a href="#hero">Início</a></li>
       <li><a href="#treatments">Tratamentos</a></li>
@@ -1067,7 +1071,7 @@ footer .logo { color: #fff; }
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="#hero" class="logo">Beauty Clinic<span> Vasconcellos</span></a>
+        <a href="#hero" class="logo"><img src="clinic-vasconcellos.jpg" alt="Beauty Clinic Vasconcellos logo">Beauty Clinic<span> Vasconcellos</span></a>
         <p class="footer-tagline">Pele lisa, livre e impecável todos os dias. Liberdade começa na sua pele.</p>
       </div>
       <div class="footer-col">
